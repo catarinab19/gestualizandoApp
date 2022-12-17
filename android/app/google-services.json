@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1059827376484",
+    "project_id": "lgpapp-f19f7",
+    "storage_bucket": "lgpapp-f19f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1059827376484:android:516c059d28dbd326bbda71",
+        "android_client_info": {
+          "package_name": "com.example.appsilva"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1059827376484-73o1cq06nghjc3ojhnkuishnavladj2j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appsilva",
+            "certificate_hash": "f4d58e405ca1eb707eadaa9fdfa32f2abb01a942"
+          }
+        },
+        {
+          "client_id": "1059827376484-eibju7vr26k83eqqk2ic5e1jc52bek9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl-DiruCC5EJcd9MIV4CszeE7HIxt6ySg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1059827376484-eibju7vr26k83eqqk2ic5e1jc52bek9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
