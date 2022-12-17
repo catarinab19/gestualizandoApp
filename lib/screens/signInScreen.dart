@@ -226,7 +226,7 @@ class _SignFormState extends State<SignInScreen> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SignIn(),//CasaView(),
+                builder: (context) => MainPage(),//CasaView(),
               ))
         });
       } on FirebaseAuthException catch (error) {

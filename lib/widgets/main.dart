@@ -7,6 +7,7 @@ import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/screens/animais/animal1.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:appsilva/screens/animais/animal2.dart';
+import 'package:appsilva/screens/transports/transporte1.dart';
 
 import 'package:appsilva/screens/artigos.dart';
 import 'package:appsilva/screens/profile.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Muli",
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      title: 'LGP',
+      title: 'Gestualizando',
       routes: {
         WelcomeScreen.routeName: (context) => WelcomeScreen(),
         SignIn.routeName: (context) => SignIn(),
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
         Profile.routeName: (context) => Profile(),
         ForgotPassword.routeName: (context) => ForgotPassword(),
         Artigos.routeName: (context) => Artigos(),
+        Transporte1.routeName: (context) => Transporte1(),
       },
       initialRoute: WelcomeScreen.routeName,
     );

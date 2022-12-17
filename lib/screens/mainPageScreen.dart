@@ -6,6 +6,7 @@ import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:appsilva/screens/animais/animal1.dart';
 import 'package:appsilva/widgets/navBar.dart';
 import 'package:appsilva/widgets/menuState.dart';
+import 'package:appsilva/screens/transports/transporte1.dart';
 
 class MainPageScreen extends StatefulWidget {
   static String routeName = "/main_page";
@@ -15,7 +16,6 @@ class MainPageScreen extends StatefulWidget {
 }
 
 class _MainPageFormState extends State<MainPageScreen> {
-
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -43,73 +43,68 @@ class _MainPageFormState extends State<MainPageScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(100),
-                      height: getProportionateScreenHeight(56),
-                      child: ElevatedButton(
+                      width: getProportionateScreenWidth(200),
+                      height: getProportionateScreenHeight(60),
+                      child: ElevatedButton.icon(
                         //key: const Key('signin'),
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Animal1(/*apiMockUpAccounts*/),
+                                builder: (context) =>
+                                    Animal1(),
                               ));
                         },
+
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
                           primary: Colors.indigo[900],
                         ),
-                        child: Text(
+                        label: Text(
                           'Animais',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
                             color: Colors.white,
-
                           ),
-                          ),
-
+                        ),
+                        icon: Icon(Icons.pets_rounded //cruelty_free
+                            ),
                       ),
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
-                    /*IconButton(
-                      icon: Image.asset('images/comidaIcon.png'),
-                      iconSize: 50,
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => Comida(/*apiMockUpAccounts*/),
-                            ));
-                      },
-                    ),*/
                     SizedBox(
                       width: getProportionateScreenWidth(200),
-                      height: getProportionateScreenHeight(100),
-                      child: InkWell (
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Animal1(/*apiMockUpAccounts*/),
-                               ));
-                         },
-                        child: Row (
-                          mainAxisSize: MainAxisSize.min,
-                           children: [
-                             Ink.image(
-                                 image: AssetImage('images/food.jpg')),
-                             //SizedBox(height: getProportionateScreenHeight(50)),
-                             /*Text(
-                                'Comida',
-                                 style: TextStyle(fontSize: getProportionateScreenWidth(18)),
-                              ),*/
-                             //SizedBox(height: getProportionateScreenHeight(2)),
+                      height: getProportionateScreenHeight(60),
+                      child: ElevatedButton.icon(
+                        //key: const Key('signin'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Transporte1(),
+                              ));
+                        },
 
-                       ],
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          primary: Colors.indigo[900],
+                        ),
+                        label: Text(
+                          'Transportes',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: getProportionateScreenWidth(18),
+                            color: Colors.white,
+                          ),
+                        ),
+                        icon: Icon(Icons.directions_car_filled_rounded
+                            ),
                       ),
                     ),
-            ),
                   ],
                 ),
               ),
@@ -120,5 +115,4 @@ class _MainPageFormState extends State<MainPageScreen> {
       bottomNavigationBar: NavBar(selectedMenu: MenuState.mainPage),
     );
   }
-
 }

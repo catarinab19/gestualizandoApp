@@ -3,10 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/animais/animal1.dart';
+import 'package:appsilva/screens/transports/transporte1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
+//import 'package:appsilva/screens/transports/transporte2.dart';
 import 'package:appsilva/screens/animais/animal2.dart';
 
 import 'dart:async';
@@ -14,18 +15,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class AnimalScreen1 extends StatefulWidget {
-  static String routeName = "/animal1_page";
-
-  //ComidaScreen({Key key}) : super(key: key);
+class TransporteScreen1 extends StatefulWidget {
+  static String routeName = "/transports1_page";
 
   @override
-  _Animal1FormState createState() => _Animal1FormState();
+  _Transporte1FormState createState() => _Transporte1FormState();
 }
 
-class _Animal1FormState extends State<AnimalScreen1> {
-  late VideoPlayerController _controller;
-  late VideoPlayerController _controller2;
+class _Transporte1FormState extends State<TransporteScreen1> {
+  late VideoPlayerController _controller4;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -39,17 +37,17 @@ class _Animal1FormState extends State<AnimalScreen1> {
 
   @override
   void initState() {
-    _controller = VideoPlayerController.asset('assets/videos/animais/cao.mp4');
-    _initializeVideoPlayerFuture = _controller.initialize();
+    _controller4 = VideoPlayerController.asset('assets/videos/transportes/carro.mp4');
+    _initializeVideoPlayerFuture = _controller4.initialize();
 
-    _controller.setLooping(true);
+    _controller4.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller4.dispose();
 
     super.dispose();
   }
@@ -80,14 +78,14 @@ class _Animal1FormState extends State<AnimalScreen1> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsets.only(bottom: 15, left: 10, right: 10),
+                    const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child: FutureBuilder(
                       future: _initializeVideoPlayerFuture,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller.value.aspectRatio,
-                            child: VideoPlayer(_controller),
+                            aspectRatio: _controller4.value.aspectRatio,
+                            child: VideoPlayer(_controller4),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -102,17 +100,17 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller.value.isPlaying) {
-                            _controller.pause();
+                          if (_controller4.value.isPlaying) {
+                            _controller4.pause();
                           } else {
                             // play
-                            _controller.play();
+                            _controller4.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller.value.isPlaying
+                        _controller4.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -122,7 +120,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                   SizedBox(height: getProportionateScreenHeight(80)),
                   Padding(
                     padding:
-                        const EdgeInsets.only(bottom: 15, left: 10, right: 10),
+                    const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child: TextFormField(
                       // key: const Key('email'),
                       controller: _wordCorrectController,
@@ -144,7 +142,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[0].resposta)
+                              apiMockUp.l1.answers[3].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -178,31 +176,31 @@ class _Animal1FormState extends State<AnimalScreen1> {
                             );
                           }
                         }
-                           if (_wordCorrectController.text.isEmpty){
-                            ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  behavior: SnackBarBehavior.floating,
-                                    backgroundColor: Colors.transparent,
-                                    elevation: 0,
-                                    content:
-                                    Container(
-                                      padding: const EdgeInsets.all(16),
-                                      height: 60,
-                                      decoration: BoxDecoration(
-                                        color: Colors.indigo[900],
-                                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                                      ),
-                                      child: const Text(
-                                        "Por favor, coloca uma resposta.",
-                                            style: const TextStyle(
-                                              fontSize: 17,
-
-                                      ),
-                                      ),
-                                    ),
+                        if (_wordCorrectController.text.isEmpty){
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                              content:
+                              Container(
+                                padding: const EdgeInsets.all(16),
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.indigo[900],
+                                  borderRadius: BorderRadius.all(Radius.circular(20)),
                                 ),
-                            );
-                          }
+                                child: const Text(
+                                  "Por favor, coloca uma resposta.",
+                                  style: const TextStyle(
+                                    fontSize: 17,
+
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
 
                       },
                       style: ElevatedButton.styleFrom(
