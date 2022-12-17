@@ -204,7 +204,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 ))
           ],
         ));
-  }s
+  }
 
   void removeError({String? error}) {
     if (errors.contains(error)) {

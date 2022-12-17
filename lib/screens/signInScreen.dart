@@ -8,6 +8,7 @@ import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:appsilva/screens/signUp.dart';
 import 'package:appsilva/screens/forgotPassword.dart';
 import 'package:appsilva/screens/mainPage.dart';
+import 'package:appsilva/screens/signIn.dart';
 
 class SignInScreen extends StatefulWidget {
   static String routeName = "/sign_in";
@@ -173,11 +174,6 @@ class _SignFormState extends State<SignInScreen> {
                         onPressed: () {
                           signInB(_emailTextController.text,
                               _passwordTextController.text);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MainPage(/*apiMockUpAccounts*/),
-                              ));
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -227,11 +223,11 @@ class _SignFormState extends State<SignInScreen> {
             .signInWithEmailAndPassword(email: email, password: password)
             .then((uid) => {
           Fluttertoast.showToast(msg: "Login Successful"),
-         /* Navigator.push(
+          Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => SignIn(),//CasaView(),
-              ))*/
+              ))
         });
       } on FirebaseAuthException catch (error) {
         switch (error.code) {
