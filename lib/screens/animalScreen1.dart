@@ -25,6 +25,7 @@ class AnimalScreen1 extends StatefulWidget {
 
 class _Animal1FormState extends State<AnimalScreen1> {
   late VideoPlayerController _controller;
+  late VideoPlayerController _controller2;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -43,12 +44,19 @@ class _Animal1FormState extends State<AnimalScreen1> {
 
     _controller.setLooping(true);
 
+    _controller2 =
+        VideoPlayerController.asset('assets/videos/animais/coelho.mp4');
+    _initializeVideoPlayerFuture = _controller2.initialize();
+
+    _controller2.setLooping(true);
+
     super.initState();
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _controller2.dispose();
 
     super.dispose();
   }
@@ -77,52 +85,92 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       ),
                     ),
                   ),*/
-            Padding(
-              padding:
-              const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-              child:FutureBuilder(
-                future: _initializeVideoPlayerFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    return AspectRatio(
-                      aspectRatio: _controller.value.aspectRatio,
-                      child: VideoPlayer(_controller),
-                    );
-                  } else {
-                    return Center(child: CircularProgressIndicator());
-                  }
-                },
-              ),
-
-            ),
-            SizedBox(
-              width: getProportionateScreenWidth(100),
-              height: getProportionateScreenHeight(56),
-              child: FloatingActionButton(
-                onPressed: () {
-          setState(() {
-          // pause
-          if (_controller.value.isPlaying) {
-          _controller.pause();
-          } else {
-          // play
-          _controller.play();
-          }
-          });
-          },
-            // icon
-            child: Icon(
-              _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-            ),
-          ),
-
-        ),
-                  SizedBox(height: getProportionateScreenHeight(80)),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(bottom: 15, left: 10, right: 10),
+                    child: FutureBuilder(
+                      future: _initializeVideoPlayerFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return AspectRatio(
+                            aspectRatio: _controller.value.aspectRatio,
+                            child: VideoPlayer(_controller),
+                          );
+                        } else {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: getProportionateScreenWidth(100),
+                    height: getProportionateScreenHeight(56),
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        setState(() {
+                          // pause
+                          if (_controller.value.isPlaying) {
+                            _controller.pause();
+                          } else {
+                            // play
+                            _controller.play();
+                          }
+                        });
+                      },
+                      // icon
+                      child: Icon(
+                        _controller.value.isPlaying
+                            ? Icons.pause
+                            : Icons.play_arrow,
+                      ),
+                    ),
+                  ),
                   Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
+                    child: FutureBuilder(
+                      future: _initializeVideoPlayerFuture,
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState == ConnectionState.done) {
+                          return AspectRatio(
+                            aspectRatio: _controller2.value.aspectRatio,
+                            child: VideoPlayer(_controller2),
+                          );
+                        } else {
+                          return Center(child: CircularProgressIndicator());
+                        }
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: getProportionateScreenWidth(100),
+                    height: getProportionateScreenHeight(56),
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        setState(() {
+                          // pause
+                          if (_controller2.value.isPlaying) {
+                            _controller2.pause();
+                          } else {
+                            // play
+                            _controller2.play();
+                          }
+                        });
+                      },
+                      // icon
+                      child: Icon(
+                        _controller2.value.isPlaying
+                            ? Icons.pause
+                            : Icons.play_arrow,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: getProportionateScreenHeight(80)),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child: TextFormField(
-                     // key: const Key('email'),
+                      // key: const Key('email'),
                       controller: _wordCorrectController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
@@ -154,14 +202,16 @@ class _Animal1FormState extends State<AnimalScreen1> {
                     width: getProportionateScreenWidth(100),
                     height: getProportionateScreenHeight(56),
                     child: ElevatedButton(
-                     // key: const Key('signin'),
+                      // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
-                          if(_wordCorrectController.text == apiMockUp.l1.answers[0].resposta)
+                          if (_wordCorrectController.text ==
+                              apiMockUp.l1.answers[0].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Animal2(/*apiMockUpAccounts*/),
+                                  builder: (context) =>
+                                      Animal2(/*apiMockUpAccounts*/),
                                 ));
                           else {
                             addError(error: "Por favor coloca a tua resposta");
@@ -191,6 +241,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
       ),
     );
   }
+
   void removeError({String? error}) {
     if (errors.contains(error)) {
       setState(() {
@@ -207,5 +258,3 @@ class _Animal1FormState extends State<AnimalScreen1> {
     }
   }
 }
-
-
