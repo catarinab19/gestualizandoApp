@@ -38,7 +38,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
 
   @override
   void initState() {
-    _controller = VideoPlayerController.asset('assets/videos/cao.mp4');
+    _controller = VideoPlayerController.asset('assets/videos/animais/cao.mp4');
     _initializeVideoPlayerFuture = _controller.initialize();
 
     _controller.setLooping(true);
@@ -65,7 +65,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-                  Padding(
+                  /*Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
@@ -76,7 +76,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
+                  ),*/
             Padding(
               padding:
               const EdgeInsets.only(bottom: 15, left: 10, right: 10),
@@ -157,7 +157,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                      // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
-                          if(_wordCorrectController.text == answer.resposta)
+                          if(_wordCorrectController.text == apiMockUp.l1.answers[0].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

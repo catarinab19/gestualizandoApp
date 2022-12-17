@@ -1,5 +1,6 @@
 class Answer {
   String resposta;
+  int index;
 
-  Answer(this.resposta);
+  Answer(this.resposta, this.index);
 }

@@ -37,9 +37,7 @@ class _Animal2FormState extends State<AnimalScreen2> {
 
   @override
   void initState() {
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
-    );
+    _controller = VideoPlayerController.asset('assets/videos/animais/gato.mp4');
     _initializeVideoPlayerFuture = _controller.initialize();
 
     _controller.setLooping(true);
@@ -158,7 +156,7 @@ class _Animal2FormState extends State<AnimalScreen2> {
                       // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
-                          if(_wordCorrectController.text == answer.resposta)
+                          if(_wordCorrectController.text == apiMockUp.l1.answers[1].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
