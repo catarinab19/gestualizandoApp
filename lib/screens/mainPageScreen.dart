@@ -3,7 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/animal1.dart';
+import 'package:appsilva/screens/animais/animal1.dart';
+import 'package:appsilva/widgets/navBar.dart';
+import 'package:appsilva/widgets/menuState.dart';
 
 class MainPageScreen extends StatefulWidget {
   static String routeName = "/main_page";
@@ -115,6 +117,7 @@ class _MainPageFormState extends State<MainPageScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: NavBar(selectedMenu: MenuState.mainPage),
     );
   }
 

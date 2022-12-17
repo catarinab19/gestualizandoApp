@@ -1,0 +1,1 @@
+enum MenuState { mainPage, artigos, profile }

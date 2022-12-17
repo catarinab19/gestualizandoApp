@@ -3,11 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/animal1.dart';
+import 'package:appsilva/screens/animais/animal1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/animal2.dart';
+import 'package:appsilva/screens/animais/animal2.dart';
 
 import 'dart:async';
 
@@ -44,19 +44,12 @@ class _Animal1FormState extends State<AnimalScreen1> {
 
     _controller.setLooping(true);
 
-    _controller2 =
-        VideoPlayerController.asset('assets/videos/animais/coelho.mp4');
-    _initializeVideoPlayerFuture = _controller2.initialize();
-
-    _controller2.setLooping(true);
-
     super.initState();
   }
 
   @override
   void dispose() {
     _controller.dispose();
-    _controller2.dispose();
 
     super.dispose();
   }
@@ -125,46 +118,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                    const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-                    child: FutureBuilder(
-                      future: _initializeVideoPlayerFuture,
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          return AspectRatio(
-                            aspectRatio: _controller2.value.aspectRatio,
-                            child: VideoPlayer(_controller2),
-                          );
-                        } else {
-                          return Center(child: CircularProgressIndicator());
-                        }
-                      },
-                    ),
-                  ),
-                  SizedBox(
-                    width: getProportionateScreenWidth(100),
-                    height: getProportionateScreenHeight(56),
-                    child: FloatingActionButton(
-                      onPressed: () {
-                        setState(() {
-                          // pause
-                          if (_controller2.value.isPlaying) {
-                            _controller2.pause();
-                          } else {
-                            // play
-                            _controller2.play();
-                          }
-                        });
-                      },
-                      // icon
-                      child: Icon(
-                        _controller2.value.isPlaying
-                            ? Icons.pause
-                            : Icons.play_arrow,
-                      ),
-                    ),
-                  ),
+
                   SizedBox(height: getProportionateScreenHeight(80)),
                   Padding(
                     padding:
@@ -179,22 +133,6 @@ class _Animal1FormState extends State<AnimalScreen1> {
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         prefixIcon: Icon(Icons.abc),
                       ),
-                      onSaved: (value) {
-                        _wordCorrectController.text = value!;
-                      },
-                      onChanged: (value) {
-                        if (value.isNotEmpty) {
-                          removeError(error: 'Por favor coloca a tua resposta');
-                        }
-                        return null;
-                      },
-                      validator: (value) {
-                        if (value!.isEmpty) {
-                          addError(error: "Por favor coloca a tua resposta");
-                          return "Por favor coloca a tua resposta";
-                        }
-                        return null;
-                      },
                     ),
                   ),
                   SizedBox(height: getProportionateScreenHeight(120)),
@@ -213,10 +151,59 @@ class _Animal1FormState extends State<AnimalScreen1> {
                                   builder: (context) =>
                                       Animal2(/*apiMockUpAccounts*/),
                                 ));
-                          else {
-                            addError(error: "Por favor coloca a tua resposta");
+                          else if (_wordCorrectController.text !=
+                              apiMockUp.l1.answers[0].resposta && _wordCorrectController.text.isNotEmpty){
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                behavior: SnackBarBehavior.floating,
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                content:
+                                Container(
+                                  padding: const EdgeInsets.all(16),
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    color: Colors.indigo[900],
+                                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                                  ),
+                                  child: const Text(
+                                    "Resposta errada! Tenta novamente :)",
+                                    style: const TextStyle(
+                                      fontSize: 17,
+
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            );
                           }
                         }
+                           if (_wordCorrectController.text.isEmpty){
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  behavior: SnackBarBehavior.floating,
+                                    backgroundColor: Colors.transparent,
+                                    elevation: 0,
+                                    content:
+                                    Container(
+                                      padding: const EdgeInsets.all(16),
+                                      height: 60,
+                                      decoration: BoxDecoration(
+                                        color: Colors.indigo[900],
+                                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                                      ),
+                                      child: const Text(
+                                        "Por favor, coloca uma resposta.",
+                                            style: const TextStyle(
+                                              fontSize: 17,
+
+                                      ),
+                                      ),
+                                    ),
+                                ),
+                            );
+                          }
+
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

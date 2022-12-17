@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appsilva/screens/mainPageScreen.dart';
-import 'package:appsilva/screens/animalScreen1.dart';
+import 'package:appsilva/screens/animais/animalScreen2.dart';
 
-class Animal1 extends StatelessWidget {
-  static String routeName = "/animal1_page";
+
+class Animal2 extends StatelessWidget {
+  static String routeName = "/animal2_page";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class Animal1 extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.indigo[900],
       ),
-      body: AnimalScreen1(),
+      body: AnimalScreen2(),
     );
 
 

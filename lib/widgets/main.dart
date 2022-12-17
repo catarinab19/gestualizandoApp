@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:appsilva/screens/signUp.dart';
 import 'package:appsilva/screens/forgotPassword.dart';
 import 'package:appsilva/screens/mainPage.dart';
-import 'package:appsilva/screens/animal1.dart';
+import 'package:appsilva/screens/animais/animal1.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:appsilva/screens/animal2.dart';
+import 'package:appsilva/screens/animais/animal2.dart';
+
+import 'package:appsilva/screens/artigos.dart';
+import 'package:appsilva/screens/profile.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,9 +44,9 @@ class MyApp extends StatelessWidget {
         MainPage.routeName: (context) => MainPage(),
         SignUp.routeName: (context) => SignUp(),
         Animal1.routeName: (context) => Animal1(),
-        //Animal2.routeName: (context) => Animal2(),
+        Profile.routeName: (context) => Profile(),
         ForgotPassword.routeName: (context) => ForgotPassword(),
-        //Profile.routeName: (context) => Profile(),
+        Artigos.routeName: (context) => Artigos(),
       },
       initialRoute: WelcomeScreen.routeName,
     );

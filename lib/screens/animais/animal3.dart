@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appsilva/screens/mainPageScreen.dart';
-import 'package:appsilva/screens/animalScreen2.dart';
+import 'package:appsilva/screens/animais/animalScreen3.dart';
 
 
-class Animal2 extends StatelessWidget {
+class Animal3 extends StatelessWidget {
   static String routeName = "/animal2_page";
 
   @override
@@ -15,7 +15,7 @@ class Animal2 extends StatelessWidget {
       appBar: AppBar(
         //key: const Key('signin1'),
         title: Text(
-          "Comida",
+          "Animais",
           style: TextStyle(
             color: Colors.indigo[900],
             fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class Animal2 extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.indigo[900],
       ),
-      body: AnimalScreen2(),
+      body: AnimalScreen3(),
     );
 
 
