@@ -6,6 +6,8 @@ import 'package:appsilva/screens/signIn.dart';
 
 import 'package:appsilva/model/userModel.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
+import 'package:appsilva/widgets/navBar.dart';
+import 'package:appsilva/widgets/menuState.dart';
 
 class ProfileScreen extends StatefulWidget {
   @override
@@ -83,6 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: NavBar(selectedMenu: MenuState.mainPage),
     );
   }
 
