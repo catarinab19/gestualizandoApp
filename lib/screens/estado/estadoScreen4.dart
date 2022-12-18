@@ -8,7 +8,7 @@ import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 import 'package:appsilva/screens/estado/estado4.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+import 'package:appsilva/screens/estado/finalScreen.dart';
 
 import 'dart:async';
 
@@ -147,7 +147,7 @@ class _Estado4FormState extends State<EstadoScreen4> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Objeto2(),
+                                      FinalScreen(),
                                 ));
                         }
                         if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "orgulhoso"){

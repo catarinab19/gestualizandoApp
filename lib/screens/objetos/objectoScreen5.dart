@@ -7,8 +7,8 @@ import 'package:appsilva/screens/objetos/objeto3.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/transports/transporte2.dart';
 import 'package:appsilva/screens/objetos/objeto5.dart';
+import 'package:appsilva/screens/objetos/finalScreen.dart';
 
 import 'dart:async';
 
@@ -147,7 +147,7 @@ class _Objecto5FormState extends State<ObjectoScreen5> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Transporte2(),
+                                      FinalScreen(),
                                 ));
                         }
                         if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "caderno"){

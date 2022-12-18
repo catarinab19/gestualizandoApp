@@ -150,7 +150,7 @@ class _Comida2FormState extends State<ComidaScreen2> {
                                       Comida3(),
                                 ));
                         }
-                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "orgulhoso"){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "batata"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,

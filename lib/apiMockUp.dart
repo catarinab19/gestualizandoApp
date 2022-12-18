@@ -46,15 +46,22 @@ class ApiMockUp {
     l1.addAnswer(answer36);
     l1.addAnswer(answer37);
     l1.addAnswer(answer38);
+    l1.addAnswer(answer39);
+
+    l1.addAnswer(answer40);
+
 
   }
   Answer answer1 = Answer("cão", 0);
   Answer answer2 = Answer("coelho", 1);
   Answer answer3 = Answer("gato", 2);
+  Answer answer40 = Answer("pássaro", 39);
 
   Answer answer4 = Answer("carro", 3);
   Answer answer5 = Answer("autocarro", 4);
   Answer answer6 = Answer("metro", 5);
+  Answer answer41 = Answer("comboio", 40);
+  Answer answer42 = Answer("bicicleta", 41);
 
   Answer answer7 = Answer("bola", 6);
   Answer answer8 = Answer("televisão", 7);

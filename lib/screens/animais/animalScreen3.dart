@@ -3,7 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/animais/animal3.dart';
+import 'package:appsilva/screens/animais/animal4.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
@@ -144,7 +144,7 @@ class _Animal3FormState extends State<AnimalScreen3> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Animal3(/*apiMockUpAccounts*/),
+                                  builder: (context) => Animal4(),
                                 ));
                         }
                         if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "gato"){

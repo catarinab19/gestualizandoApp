@@ -3,28 +3,27 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-//import 'package:appsilva/screens/objetos/objeto1.dart';
+import 'package:appsilva/screens/transports/transporte1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/cores/cor3.dart';
-import 'package:appsilva/screens/cores/cor6.dart';
-import 'package:appsilva/screens/cores/finalScreen.dart';
+import 'package:appsilva/screens/transports/transporte3.dart';
+import 'package:appsilva/screens/transports/finalScreen.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class CorScreen6 extends StatefulWidget {
-  static String routeName = "/cor6_page";
+class TransporteScreen5 extends StatefulWidget {
+  static String routeName = "/transports5_page";
 
   @override
-  _Cor6FormState createState() => _Cor6FormState();
+  _Transporte5FormState createState() => _Transporte5FormState();
 }
 
-class _Cor6FormState extends State<CorScreen6> {
-  late VideoPlayerController _controller18;
+class _Transporte5FormState extends State<TransporteScreen5> {
+  late VideoPlayerController _controller35;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -38,17 +37,17 @@ class _Cor6FormState extends State<CorScreen6> {
 
   @override
   void initState() {
-    _controller18 = VideoPlayerController.asset('assets/videos/cores/vermelho.mp4');
-    _initializeVideoPlayerFuture = _controller18.initialize();
+    _controller35 = VideoPlayerController.asset('assets/videos/transportes/bicicleta.mp4');
+    _initializeVideoPlayerFuture = _controller35.initialize();
 
-    _controller18.setLooping(true);
+    _controller35.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller18.dispose();
+    _controller35.dispose();
 
     super.dispose();
   }
@@ -69,10 +68,10 @@ class _Cor6FormState extends State<CorScreen6> {
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
-                      "Nível 5",
+                      "Nível 3",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.blue[300],
+                        color: Colors.lightGreen[400],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -85,8 +84,8 @@ class _Cor6FormState extends State<CorScreen6> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller18.value.aspectRatio,
-                            child: VideoPlayer(_controller18),
+                            aspectRatio: _controller35.value.aspectRatio,
+                            child: VideoPlayer(_controller35),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -101,17 +100,17 @@ class _Cor6FormState extends State<CorScreen6> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller18.value.isPlaying) {
-                            _controller18.pause();
+                          if (_controller35.value.isPlaying) {
+                            _controller35.pause();
                           } else {
                             // play
-                            _controller18.play();
+                            _controller35.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller18.value.isPlaying
+                        _controller35.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -143,15 +142,15 @@ class _Cor6FormState extends State<CorScreen6> {
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[20].resposta)
+                              apiMockUp.l1.answers[41].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      FinalScreen(),
+                                      FinalScreen(/*apiMockUpAccounts*/),
                                 ));
                         }
-                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "vermelho"){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "metro"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
@@ -181,7 +180,7 @@ class _Cor6FormState extends State<CorScreen6> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        primary: Colors.blue[300],
+                        primary: Colors.lightGreen[400],
                       ),
                       child: Text(
                         'Continuar',

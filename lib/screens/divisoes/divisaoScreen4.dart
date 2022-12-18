@@ -9,7 +9,7 @@ import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 import 'package:appsilva/screens/divisoes/divisao1.dart';
 import 'package:appsilva/screens/divisoes/divisao4.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+import 'package:appsilva/screens/divisoes/finalScreen.dart';
 
 import 'dart:async';
 
@@ -148,7 +148,7 @@ class _Divisao4FormState extends State<DivisaoScreen4> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Objeto2(),
+                                      FinalScreen(),
                                 ));
                         }
                         if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "quarto"){

@@ -3,28 +3,28 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-//import 'package:appsilva/screens/objetos/objeto1.dart';
+import 'package:appsilva/screens/animais/animal3.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/cores/cor3.dart';
-import 'package:appsilva/screens/cores/cor6.dart';
-import 'package:appsilva/screens/cores/finalScreen.dart';
+import 'package:appsilva/screens/animais/finalScreen.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class CorScreen6 extends StatefulWidget {
-  static String routeName = "/cor6_page";
+class AnimalScreen4 extends StatefulWidget {
+  static String routeName = "/animal4_page";
+
+  //ComidaScreen({Key key}) : super(key: key);
 
   @override
-  _Cor6FormState createState() => _Cor6FormState();
+  _Animal4FormState createState() => _Animal4FormState();
 }
 
-class _Cor6FormState extends State<CorScreen6> {
-  late VideoPlayerController _controller18;
+class _Animal4FormState extends State<AnimalScreen4> {
+  late VideoPlayerController _controller33;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -38,17 +38,17 @@ class _Cor6FormState extends State<CorScreen6> {
 
   @override
   void initState() {
-    _controller18 = VideoPlayerController.asset('assets/videos/cores/vermelho.mp4');
-    _initializeVideoPlayerFuture = _controller18.initialize();
+    _controller33 = VideoPlayerController.asset('assets/videos/animais/passaro.mp4');
+    _initializeVideoPlayerFuture = _controller33.initialize();
 
-    _controller18.setLooping(true);
+    _controller33.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller18.dispose();
+    _controller33.dispose();
 
     super.dispose();
   }
@@ -69,10 +69,10 @@ class _Cor6FormState extends State<CorScreen6> {
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
-                      "Nível 5",
+                      "Nível 1",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.blue[300],
+                        color: Colors.red[300],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -80,19 +80,20 @@ class _Cor6FormState extends State<CorScreen6> {
                   Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-                    child: FutureBuilder(
+                    child:FutureBuilder(
                       future: _initializeVideoPlayerFuture,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller18.value.aspectRatio,
-                            child: VideoPlayer(_controller18),
+                            aspectRatio: _controller33.value.aspectRatio,
+                            child: VideoPlayer(_controller33),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
                         }
                       },
                     ),
+
                   ),
                   SizedBox(
                     width: getProportionateScreenWidth(100),
@@ -101,34 +102,32 @@ class _Cor6FormState extends State<CorScreen6> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller18.value.isPlaying) {
-                            _controller18.pause();
+                          if (_controller33.value.isPlaying) {
+                            _controller33.pause();
                           } else {
                             // play
-                            _controller18.play();
+                            _controller33.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller18.value.isPlaying
-                            ? Icons.pause
-                            : Icons.play_arrow,
+                        _controller33.value.isPlaying ? Icons.pause : Icons.play_arrow,
                       ),
                     ),
-                  ),
 
+                  ),
                   SizedBox(height: getProportionateScreenHeight(80)),
                   Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child: TextFormField(
-                      // key: const Key('email'),
+                      key: const Key('email'),
                       controller: _wordCorrectController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
                         labelText: "Resposta",
-                        hintText: "Coloca a tua resposta",
+                        hintText: "Coloca tua resposta",
                         floatingLabelBehavior: FloatingLabelBehavior.always,
                         prefixIcon: Icon(Icons.abc),
                       ),
@@ -142,16 +141,14 @@ class _Cor6FormState extends State<CorScreen6> {
                       // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
-                          if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[20].resposta)
+                          if(_wordCorrectController.text == apiMockUp.l1.answers[39].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      FinalScreen(),
+                                  builder: (context) => FinalScreen(),
                                 ));
                         }
-                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "vermelho"){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "pássaro"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
@@ -176,12 +173,11 @@ class _Cor6FormState extends State<CorScreen6> {
                             ),
                           );
                         }
-
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        primary: Colors.blue[300],
+                        primary: Colors.red[300],
                       ),
                       child: Text(
                         'Continuar',
@@ -202,7 +198,6 @@ class _Cor6FormState extends State<CorScreen6> {
       ),
     );
   }
-
   void removeError({String? error}) {
     if (errors.contains(error)) {
       setState(() {
@@ -219,3 +214,4 @@ class _Cor6FormState extends State<CorScreen6> {
     }
   }
 }
+

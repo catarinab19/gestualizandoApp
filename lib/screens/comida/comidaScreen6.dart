@@ -8,7 +8,7 @@ import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 import 'package:appsilva/screens/comida/comida5.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+import 'package:appsilva/screens/comida/finalScreen.dart';
 
 import 'dart:async';
 
@@ -147,10 +147,10 @@ class _Comida6FormState extends State<ComidaScreen6> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Objeto2(),
+                                      FinalScreen(),
                                 ));
                         }
-                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "orgulhoso"){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "pão"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,
