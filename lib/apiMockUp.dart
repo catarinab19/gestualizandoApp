@@ -20,6 +20,23 @@ class ApiMockUp {
     l1.addAnswer(answer13);
     l1.addAnswer(answer14);
     l1.addAnswer(answer15);
+
+    l1.addAnswer(answer16);
+    l1.addAnswer(answer17);
+    l1.addAnswer(answer18);
+    l1.addAnswer(answer19);
+    l1.addAnswer(answer20);
+    l1.addAnswer(answer21);
+    l1.addAnswer(answer22);
+    l1.addAnswer(answer23);
+    l1.addAnswer(answer24);
+    l1.addAnswer(answer25);
+
+    l1.addAnswer(answer26);
+    l1.addAnswer(answer27);
+    l1.addAnswer(answer28);
+    l1.addAnswer(answer29);
+
   }
   Answer answer1 = Answer("cão", 0);
   Answer answer2 = Answer("coelho", 1);
@@ -38,6 +55,22 @@ class ApiMockUp {
   Answer answer13 = Answer("mochila", 12);
   Answer answer14 = Answer("sofá", 13);
   Answer answer15 = Answer("mesa", 14);
+
+  Answer answer16 = Answer("amarelo", 15);
+  Answer answer17 = Answer("branco", 16);
+  Answer answer18 = Answer("preto", 17);
+  Answer answer19 = Answer("verde", 18);
+  Answer answer20 = Answer("azul", 19);
+  Answer answer21 = Answer("vermelho", 20);
+  Answer answer22 = Answer("laranja", 21);
+  Answer answer23 = Answer("cinzento", 22);
+  Answer answer24 = Answer("dourado", 23);
+  Answer answer25 = Answer("rosa", 24);
+
+  Answer answer26 = Answer("sala de estar", 25);
+  Answer answer27 = Answer("cozinha", 26);
+  Answer answer28 = Answer("casa de banho", 27);
+  Answer answer29 = Answer("quarto", 28);
 
   ListAnswer l1 = ListAnswer();
 

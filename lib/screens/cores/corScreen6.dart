@@ -7,23 +7,24 @@ import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/cores/cor1.dart';
-import 'package:appsilva/screens/cores/cor2.dart';
+import 'package:appsilva/screens/cores/cor3.dart';
+import 'package:appsilva/screens/cores/cor6.dart';
+import 'package:appsilva/screens/objetos/objeto2.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class CorScreen1 extends StatefulWidget {
-  static String routeName = "/cor1_page";
+class CorScreen6 extends StatefulWidget {
+  static String routeName = "/cor6_page";
 
   @override
-  _Cor1FormState createState() => _Cor1FormState();
+  _Cor6FormState createState() => _Cor6FormState();
 }
 
-class _Cor1FormState extends State<CorScreen1> {
-  late VideoPlayerController _controller13;
+class _Cor6FormState extends State<CorScreen6> {
+  late VideoPlayerController _controller18;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -37,17 +38,17 @@ class _Cor1FormState extends State<CorScreen1> {
 
   @override
   void initState() {
-    _controller13 = VideoPlayerController.asset('assets/videos/cores/amarelo.mp4');
-    _initializeVideoPlayerFuture = _controller13.initialize();
+    _controller18 = VideoPlayerController.asset('assets/videos/cores/vermelho.mp4');
+    _initializeVideoPlayerFuture = _controller18.initialize();
 
-    _controller13.setLooping(true);
+    _controller18.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller13.dispose();
+    _controller18.dispose();
 
     super.dispose();
   }
@@ -84,8 +85,8 @@ class _Cor1FormState extends State<CorScreen1> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller13.value.aspectRatio,
-                            child: VideoPlayer(_controller13),
+                            aspectRatio: _controller18.value.aspectRatio,
+                            child: VideoPlayer(_controller18),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -100,17 +101,17 @@ class _Cor1FormState extends State<CorScreen1> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller13.value.isPlaying) {
-                            _controller13.pause();
+                          if (_controller18.value.isPlaying) {
+                            _controller18.pause();
                           } else {
                             // play
-                            _controller13.play();
+                            _controller18.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller13.value.isPlaying
+                        _controller18.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -142,15 +143,15 @@ class _Cor1FormState extends State<CorScreen1> {
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[15].resposta)
+                              apiMockUp.l1.answers[20].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Cor2(),
+                                      Objeto2(),
                                 ));
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[15].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[20].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,
