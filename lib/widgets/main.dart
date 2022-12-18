@@ -9,6 +9,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:appsilva/screens/animais/animal2.dart';
 import 'package:appsilva/screens/transports/transporte1.dart';
 import 'package:appsilva/screens/objetos/objeto1.dart';
+import 'package:appsilva/screens/cores/cor1.dart';
 
 import 'package:appsilva/screens/artigos.dart';
 import 'package:appsilva/screens/profile.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         Artigos.routeName: (context) => Artigos(),
         Transporte1.routeName: (context) => Transporte1(),
         Objeto1.routeName: (context) => Objeto1(),
+        Cor1.routeName: (context) => Cor1(),
       },
       initialRoute: WelcomeScreen.routeName,
     );
