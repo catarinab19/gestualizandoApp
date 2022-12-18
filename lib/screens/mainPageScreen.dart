@@ -7,6 +7,7 @@ import 'package:appsilva/screens/animais/animal1.dart';
 import 'package:appsilva/widgets/navBar.dart';
 import 'package:appsilva/widgets/menuState.dart';
 import 'package:appsilva/screens/transports/transporte1.dart';
+import 'package:appsilva/screens/objetos/objeto1.dart';
 
 class MainPageScreen extends StatefulWidget {
   static String routeName = "/main_page";
@@ -103,6 +104,38 @@ class _MainPageFormState extends State<MainPageScreen> {
                         ),
                         icon: Icon(Icons.directions_car_filled_rounded
                             ),
+                      ),
+                    ),
+                    SizedBox(height: getProportionateScreenHeight(20)),
+                    SizedBox(
+                      width: getProportionateScreenWidth(200),
+                      height: getProportionateScreenHeight(60),
+                      child: ElevatedButton.icon(
+                        //key: const Key('signin'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Objeto1(),
+                              ));
+                        },
+
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          primary: Colors.indigo[900],
+                        ),
+                        label: Text(
+                          'Objetos',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: getProportionateScreenWidth(18),
+                            color: Colors.white,
+                          ),
+                        ),
+                        icon: Icon(Icons.directions_car_filled_rounded
+                        ),
                       ),
                     ),
                   ],

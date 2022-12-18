@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
           backgroundColor: Colors.white,
           foregroundColor: Colors.indigo[900],
         ),
-       // body: ProfileScreen()
+        body: ProfileScreen()
     );
   }
 }

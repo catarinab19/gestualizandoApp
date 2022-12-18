@@ -3,28 +3,27 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/transports/transporte1.dart';
+import 'package:appsilva/screens/objetos/objeto1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 import 'package:appsilva/screens/transports/transporte2.dart';
-import 'package:appsilva/screens/transports/transporte3.dart';
-import 'package:appsilva/screens/animais/animal2.dart';
+//import 'package:appsilva/screens/objetos/objeto2.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class TransporteScreen2 extends StatefulWidget {
-  static String routeName = "/transports2_page";
+class ObjectoScreen1 extends StatefulWidget {
+  static String routeName = "/objeto1_page";
 
   @override
-  _Transporte2FormState createState() => _Transporte2FormState();
+  _Objecto1FormState createState() => _Objecto1FormState();
 }
 
-class _Transporte2FormState extends State<TransporteScreen2> {
-  late VideoPlayerController _controller5;
+class _Objecto1FormState extends State<ObjectoScreen1> {
+  late VideoPlayerController _controller8;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -38,17 +37,17 @@ class _Transporte2FormState extends State<TransporteScreen2> {
 
   @override
   void initState() {
-    _controller5 = VideoPlayerController.asset('assets/videos/transportes/autocarro.mp4');
-    _initializeVideoPlayerFuture = _controller5.initialize();
+    _controller8 = VideoPlayerController.asset('assets/videos/objetos/bola.mp4');
+    _initializeVideoPlayerFuture = _controller8.initialize();
 
-    _controller5.setLooping(true);
+    _controller8.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller5.dispose();
+    _controller8.dispose();
 
     super.dispose();
   }
@@ -69,7 +68,7 @@ class _Transporte2FormState extends State<TransporteScreen2> {
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
-                      "Nível 3",
+                      "Nível 4",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
                         color: Colors.indigo[900],
@@ -85,8 +84,8 @@ class _Transporte2FormState extends State<TransporteScreen2> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller5.value.aspectRatio,
-                            child: VideoPlayer(_controller5),
+                            aspectRatio: _controller8.value.aspectRatio,
+                            child: VideoPlayer(_controller8),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -101,17 +100,17 @@ class _Transporte2FormState extends State<TransporteScreen2> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller5.value.isPlaying) {
-                            _controller5.pause();
+                          if (_controller8.value.isPlaying) {
+                            _controller8.pause();
                           } else {
                             // play
-                            _controller5.play();
+                            _controller8.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller5.value.isPlaying
+                        _controller8.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -136,22 +135,22 @@ class _Transporte2FormState extends State<TransporteScreen2> {
                   ),
                   SizedBox(height: getProportionateScreenHeight(120)),
                   SizedBox(
-                    width: getProportionateScreenWidth(200),
+                    width: getProportionateScreenWidth(100),
                     height: getProportionateScreenHeight(56),
                     child: ElevatedButton(
                       // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[4].resposta)
+                              apiMockUp.l1.answers[6].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Transporte3(),
+                                      Transporte2(),
                                 ));
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[4].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[6].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,

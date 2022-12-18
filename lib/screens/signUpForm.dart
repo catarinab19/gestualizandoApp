@@ -49,8 +49,13 @@ class _SignUpFormState extends State<SignUpForm> {
               // name
               key: const Key('name'),
               controller: _nameEditingController,
-              onSaved: (value) {_nameEditingController.text = value!;},
+              onSaved: (value) {
+                _nameEditingController.text = value!;
+              },
               onChanged: (value) {
+                //_nameEditingController.text = value!;
+                _nameEditingController.selection = TextSelection.fromPosition(TextPosition(offset: _nameEditingController.text.length));
+                //_nameEditingController.selection = TextSelection.fromPosition(TextPosition(offset: _nameEditingController.text.length));
                 if (value.isNotEmpty) {
                   removeError(error: "Please enter your name");
                   _nameEditingController.text = value;
