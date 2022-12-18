@@ -71,7 +71,7 @@ class _Cor1FormState extends State<CorScreen1> {
                       "Nível 5",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.indigo[900],
+                        color: Colors.blue[300],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -165,7 +165,7 @@ class _Cor1FormState extends State<CorScreen1> {
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                 ),
                                 child: const Text(
-                                  "Por favor, coloca uma resposta.",
+                                  "Por favor, coloca a resposta certa.",
                                   style: const TextStyle(
                                     fontSize: 17,
 
@@ -180,7 +180,7 @@ class _Cor1FormState extends State<CorScreen1> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        primary: Colors.indigo[900],
+                        primary: Colors.blue[300],
                       ),
                       child: Text(
                         'Continuar',
@@ -192,6 +192,7 @@ class _Cor1FormState extends State<CorScreen1> {
                       ),
                     ),
                   ),
+                  SizedBox(height: getProportionateScreenHeight(80)),
                 ],
               ),
             ),

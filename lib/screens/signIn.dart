@@ -17,13 +17,13 @@ class SignIn extends StatelessWidget {
         title: Text(
           "Sign In",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.pink[400],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.pink[400],
       ),
       body: SignInScreen(),
     );

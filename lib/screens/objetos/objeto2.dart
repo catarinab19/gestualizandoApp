@@ -16,13 +16,13 @@ class Objeto2 extends StatelessWidget {
         title: Text(
           "Objetos",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.cyan[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.cyan[300],
       ),
       body: ObjectoScreen2(),
     );

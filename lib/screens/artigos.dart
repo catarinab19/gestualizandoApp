@@ -2,6 +2,7 @@ import 'package:appsilva/screens/signInScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
+import 'package:appsilva/screens/artigosScreen.dart';
 
 class Artigos extends StatelessWidget {
   //ApiMockUp apiMockUpAccounts;
@@ -12,20 +13,20 @@ class Artigos extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
+     /* appBar: AppBar(
         key: const Key('signin1'),
         title: Text(
           "Artigos",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.pink[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
-      ),
-      //body: SignInScreen(),
+        foregroundColor: Colors.pink[300],
+      ),*/
+      body: ArtigosScreen(),
     );
 
 

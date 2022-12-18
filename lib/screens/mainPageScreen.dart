@@ -11,6 +11,7 @@ import 'package:appsilva/screens/objetos/objeto1.dart';
 import 'package:appsilva/screens/cores/cor1.dart';
 import 'package:appsilva/screens/divisoes/divisao1.dart';
 import 'package:appsilva/screens/estado/estado1.dart';
+import 'package:appsilva/screens/comida/comida1.dart';
 
 class MainPageScreen extends StatefulWidget {
   static String routeName = "/main_page";
@@ -238,7 +239,38 @@ class _MainPageFormState extends State<MainPageScreen> {
                       ),
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
+                    SizedBox(
+                      width: getProportionateScreenWidth(300),
+                      height: getProportionateScreenHeight(60),
+                      child: ElevatedButton.icon(
+                        //key: const Key('signin'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Comida1(),
+                              ));
+                        },
 
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          primary: Colors.purple[300],
+                        ),
+                        label: Text(
+                          'Nível 7 - Comida',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: getProportionateScreenWidth(18),
+                            color: Colors.white,
+                          ),
+                        ),
+                        icon: Icon(Icons.directions_car_filled_rounded
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: getProportionateScreenHeight(20)),
                   ],
                 ),
               ),

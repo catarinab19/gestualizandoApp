@@ -45,10 +45,10 @@ class _SignFormState extends State<SignInScreen> {
                   children: <Widget>[
                     SizedBox(height: SizeConfig.screenHeight * 0.04),
                     Text(
-                      "LGP",
+                      "Gestualizando",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(28),
-                        color: Colors.indigo[900],
+                        color: Colors.pink[400],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -64,7 +64,7 @@ class _SignFormState extends State<SignInScreen> {
 
                           TextSpan(
                               text: 'Sign Up',
-                              style: TextStyle(color: Colors.indigo[700]),
+                              style: TextStyle(color: Colors.pink[200]),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.push(
@@ -153,7 +153,7 @@ class _SignFormState extends State<SignInScreen> {
                         children: <TextSpan>[
                           TextSpan(
                               text: 'Forgot Password?',
-                              style: TextStyle(color: Colors.indigo[700]),
+                              style: TextStyle(color: Colors.pink[200]),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.push(
@@ -177,8 +177,8 @@ class _SignFormState extends State<SignInScreen> {
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          primary: Colors.indigo[900],
+                              borderRadius: BorderRadius.circular(15)),
+                          primary: Colors.pink[600],
                         ),
                         child: Text(
                           'Sign in',

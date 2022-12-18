@@ -197,7 +197,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
-                  primary: Colors.indigo[900],
+                  primary: Colors.pink[600],
                 ),
                 child: Text(
                   "Continue",

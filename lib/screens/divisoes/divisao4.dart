@@ -17,13 +17,13 @@ class Divisao4 extends StatelessWidget {
         title: Text(
           "Divisões",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.indigo[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.indigo[300],
       ),
       body: DivisaoScreen4(),
     );

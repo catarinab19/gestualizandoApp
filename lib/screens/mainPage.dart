@@ -10,7 +10,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      appBar: AppBar(
+      /*appBar: AppBar(
         //key: const Key('signin1'),
         title: Text(
           "Categorias",
@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.indigo[900],
-      ),
+      ),*/
       body: MainPageScreen(),
     );
 

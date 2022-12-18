@@ -16,13 +16,13 @@ class Estado3 extends StatelessWidget {
         title: Text(
           "Estados de espírito",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.deepOrange[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.deepOrange[300],
       ),
       body: EstadoScreen3(),
     );

@@ -19,13 +19,13 @@ class SignUp extends StatelessWidget {
         key: const Key('signup1'),
         title: Text(
           "Sign Up",
-          style: TextStyle(color: Colors.indigo[900],
+          style: TextStyle(color: Colors.pink[400],
               fontWeight: FontWeight.bold
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.pink[400],
       ),
       body: Material(
         type: MaterialType.transparency,
@@ -43,7 +43,7 @@ class SignUp extends StatelessWidget {
                     style: TextStyle(
                       fontSize: getProportionateScreenWidth(20),
                       fontWeight: FontWeight.bold,
-                      color: Colors.indigo[900],
+                      color: Colors.pink[400],
                       height: 1.5,
                     ),
                   ),

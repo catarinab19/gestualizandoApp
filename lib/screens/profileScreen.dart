@@ -54,27 +54,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "${loggedInUser.name}",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.indigo[700],
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: SizeConfig.screenHeight * 0.06),
-                    ElevatedButton(
-                      key: const Key('logout'),
-                      onPressed: () {
-                        signOut();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
-                        primary: Colors.indigo[900],
-                      ),
-                      child: Text(
-                        'Log Out',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: getProportionateScreenWidth(18),
-                          color: Colors.white,
+                    SizedBox(
+                      width: getProportionateScreenWidth(100),
+                      height: getProportionateScreenHeight(56),
+                      child: ElevatedButton(
+                        key: const Key('logout'),
+                        onPressed: () {
+                          signOut();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          primary: Colors.pink[600],
+                        ),
+                        child: Text(
+                          'Log Out',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: getProportionateScreenWidth(18),
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),

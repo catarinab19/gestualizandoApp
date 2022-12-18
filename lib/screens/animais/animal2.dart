@@ -17,13 +17,13 @@ class Animal2 extends StatelessWidget {
         title: Text(
           "Animais",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.red[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.red[300],
       ),
       body: AnimalScreen2(),
     );

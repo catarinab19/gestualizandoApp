@@ -37,6 +37,16 @@ class ApiMockUp {
     l1.addAnswer(answer28);
     l1.addAnswer(answer29);
 
+    l1.addAnswer(answer30);
+    l1.addAnswer(answer31);
+    l1.addAnswer(answer32);
+    l1.addAnswer(answer33);
+    l1.addAnswer(answer34);
+    l1.addAnswer(answer35);
+    l1.addAnswer(answer36);
+    l1.addAnswer(answer37);
+    l1.addAnswer(answer38);
+
   }
   Answer answer1 = Answer("cão", 0);
   Answer answer2 = Answer("coelho", 1);
@@ -76,6 +86,13 @@ class ApiMockUp {
   Answer answer31 = Answer("triste", 30);
   Answer answer32 = Answer("chateado", 31);
   Answer answer33 = Answer("orgulhoso", 32);
+
+  Answer answer34 = Answer("carne", 33);
+  Answer answer35 = Answer("batata", 34);
+  Answer answer36 = Answer("cebola", 35);
+  Answer answer37 = Answer("ovo", 36);
+  Answer answer38 = Answer("bolachas", 37);
+  Answer answer39 = Answer("pão", 38);
 
   ListAnswer l1 = ListAnswer();
 

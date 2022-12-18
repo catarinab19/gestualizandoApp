@@ -16,13 +16,13 @@ class Transporte2 extends StatelessWidget {
         title: Text(
           "Transportes",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.lightGreen[400],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.lightGreen[400],
       ),
       body: TransporteScreen2(),
     );

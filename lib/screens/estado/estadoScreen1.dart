@@ -72,7 +72,7 @@ class _Estado1FormState extends State<EstadoScreen1> {
                       "Nível 2",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.indigo[900],
+                        color: Colors.deepOrange[300],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -162,11 +162,11 @@ class _Estado1FormState extends State<EstadoScreen1> {
                                 padding: const EdgeInsets.all(16),
                                 height: 60,
                                 decoration: BoxDecoration(
-                                  color: Colors.indigo[900],
+                                  color: Colors.deepOrange[300],
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                 ),
                                 child: const Text(
-                                  "Por favor, coloca uma resposta.",
+                                  "Por favor, coloca a resposta certa.",
                                   style: const TextStyle(
                                     fontSize: 17,
 
@@ -193,6 +193,7 @@ class _Estado1FormState extends State<EstadoScreen1> {
                       ),
                     ),
                   ),
+                  SizedBox(height: getProportionateScreenHeight(80)),
                 ],
               ),
             ),

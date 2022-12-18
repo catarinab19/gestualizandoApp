@@ -15,18 +15,18 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        appBar: AppBar(
+       /* appBar: AppBar(
           key: const Key('profile1'),
           title: Text(
             "Profile",
-            style: TextStyle(color: Colors.indigo[900],
+            style: TextStyle(color: Colors.pink[400],
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
           backgroundColor: Colors.white,
-          foregroundColor: Colors.indigo[900],
-        ),
+          foregroundColor: Colors.pink[400],
+        ),*/
         body: ProfileScreen()
     );
   }

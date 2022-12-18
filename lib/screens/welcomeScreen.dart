@@ -31,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                         "Gestualizando",
                         style: TextStyle(
                           fontSize: getProportionateScreenWidth(40),
-                          color: Colors.blueGrey[500],
+                          color: Colors.pink[300],
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: getProportionateScreenWidth(15),
-                              color: Colors.blueGrey[400])),
+                              color: Colors.pink[200])),
                       const Spacer(
                         flex: 1,
                       ),
@@ -79,7 +79,7 @@ class WelcomeScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
-                            primary: Colors.blueGrey[700],
+                            primary: Colors.pink[600],
                           ),
                           child: Text(
                             'Sign In',
@@ -107,7 +107,7 @@ class WelcomeScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
-                            primary: Colors.blueGrey[700],
+                            primary: Colors.pink[600],
                           ),
                           child: Text(
                             'Sign Up',

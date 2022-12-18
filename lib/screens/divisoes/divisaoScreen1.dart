@@ -69,10 +69,10 @@ class _Divisao1FormState extends State<DivisaoScreen1> {
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
-                      "Nível 5",
+                      "Nível 6",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.indigo[900],
+                        color: Colors.indigo[300],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -166,7 +166,7 @@ class _Divisao1FormState extends State<DivisaoScreen1> {
                                   borderRadius: BorderRadius.all(Radius.circular(20)),
                                 ),
                                 child: const Text(
-                                  "Por favor, coloca uma resposta.",
+                                  "Por favor, coloca a resposta certa.",
                                   style: const TextStyle(
                                     fontSize: 17,
 
@@ -181,7 +181,7 @@ class _Divisao1FormState extends State<DivisaoScreen1> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        primary: Colors.indigo[900],
+                        primary: Colors.indigo[300],
                       ),
                       child: Text(
                         'Continuar',
@@ -193,6 +193,7 @@ class _Divisao1FormState extends State<DivisaoScreen1> {
                       ),
                     ),
                   ),
+                  SizedBox(height: getProportionateScreenHeight(80)),
                 ],
               ),
             ),

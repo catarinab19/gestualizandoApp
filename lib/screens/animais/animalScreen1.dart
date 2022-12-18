@@ -73,7 +73,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       "Nível 1",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
-                        color: Colors.indigo[900],
+                        color: Colors.red[300],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -182,7 +182,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)),
-                        primary: Colors.indigo[900],
+                        primary: Colors.red[300],
                       ),
                       child: Text(
                         'Continuar',
@@ -194,6 +194,7 @@ class _Animal1FormState extends State<AnimalScreen1> {
                       ),
                     ),
                   ),
+                  SizedBox(height: getProportionateScreenHeight(80)),
                 ],
               ),
             ),

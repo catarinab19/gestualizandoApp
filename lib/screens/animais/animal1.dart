@@ -3,6 +3,7 @@ import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appsilva/screens/mainPageScreen.dart';
 import 'package:appsilva/screens/animais/animalScreen1.dart';
+import 'package:appsilva/screens/mainPage.dart';
 
 class Animal1 extends StatelessWidget {
   static String routeName = "/animal1_page";
@@ -16,13 +17,14 @@ class Animal1 extends StatelessWidget {
         title: Text(
           "Animais",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.red[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.red[300],
+
       ),
       body: AnimalScreen1(),
     );

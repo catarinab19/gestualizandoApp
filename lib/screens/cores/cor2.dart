@@ -17,13 +17,13 @@ class Cor2 extends StatelessWidget {
         title: Text(
           "Cores",
           style: TextStyle(
-            color: Colors.indigo[900],
+            color: Colors.blue[300],
             fontWeight: FontWeight.bold,
           ),
           textAlign: TextAlign.center,
         ),
         backgroundColor: Colors.white,
-        foregroundColor: Colors.indigo[900],
+        foregroundColor: Colors.blue[300],
       ),
       body: CorScreen2(),
     );
