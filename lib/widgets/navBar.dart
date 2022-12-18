@@ -40,7 +40,7 @@ class NavBar extends StatelessWidget {
             children: [
               IconButton(
                   icon: Icon(Icons.house_outlined),
-                  color: Colors.indigo[900],
+                  color: Colors.pink[300],
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -50,7 +50,7 @@ class NavBar extends StatelessWidget {
                   }),
               IconButton(
                   icon: Icon(Icons.list_alt_rounded),
-                  color: Colors.indigo[900],
+                  color: Colors.pink[300],
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -60,7 +60,7 @@ class NavBar extends StatelessWidget {
                   }),
               IconButton(
                   icon: Icon(Icons.person_outline_rounded),
-                  color: Colors.indigo[900],
+                  color: Colors.pink[300],
                   onPressed: () {
                     Navigator.push(
                       context,

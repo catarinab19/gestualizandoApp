@@ -106,7 +106,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        icon: Icon(Icons.directions_car_filled_rounded
+                        icon: Icon(Icons.emoji_emotions_rounded
                         ),
                       ),
                     ),
@@ -170,7 +170,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        icon: Icon(Icons.directions_car_filled_rounded
+                        icon: Icon(Icons.event_seat_rounded
                         ),
                       ),
                     ),
@@ -202,7 +202,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        icon: Icon(Icons.directions_car_filled_rounded
+                        icon: Icon(Icons.brush_rounded
                         ),
                       ),
                     ),
@@ -234,7 +234,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        icon: Icon(Icons.directions_car_filled_rounded
+                        icon: Icon(Icons.night_shelter_rounded
                         ),
                       ),
                     ),
@@ -266,7 +266,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        icon: Icon(Icons.directions_car_filled_rounded
+                        icon: Icon(Icons.lunch_dining_rounded
                         ),
                       ),
                     ),
