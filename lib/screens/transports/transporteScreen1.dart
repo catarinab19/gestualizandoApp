@@ -8,7 +8,7 @@ import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 //import 'package:appsilva/screens/transports/transporte2.dart';
-import 'package:appsilva/screens/animais/animal2.dart';
+import 'package:appsilva/screens/transports/transporte2.dart';
 
 import 'dart:async';
 
@@ -147,10 +147,10 @@ class _Transporte1FormState extends State<TransporteScreen1> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Animal2(/*apiMockUpAccounts*/),
+                                      Transporte2(),
                                 ));
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[0].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[3].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,

@@ -147,7 +147,7 @@ class _Animal3FormState extends State<AnimalScreen3> {
                                   builder: (context) => Animal3(/*apiMockUpAccounts*/),
                                 ));
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[0].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[2].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,

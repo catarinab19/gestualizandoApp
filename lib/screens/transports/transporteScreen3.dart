@@ -3,10 +3,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/animais/animal3.dart';
+import 'package:appsilva/screens/transports/transporte1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
+import 'package:appsilva/screens/transports/transporte3.dart';
 import 'package:appsilva/screens/animais/animal2.dart';
 
 import 'dart:async';
@@ -14,17 +15,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class AnimalScreen2 extends StatefulWidget {
-  static String routeName = "/animal2_page";
-
-  //ComidaScreen({Key key}) : super(key: key);
+class TransporteScreen3 extends StatefulWidget {
+  static String routeName = "/transports3_page";
 
   @override
-  _Animal2FormState createState() => _Animal2FormState();
+  _Transporte3FormState createState() => _Transporte3FormState();
 }
 
-class _Animal2FormState extends State<AnimalScreen2> {
-  late VideoPlayerController _controller2;
+class _Transporte3FormState extends State<TransporteScreen3> {
+  late VideoPlayerController _controller6;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -38,17 +37,17 @@ class _Animal2FormState extends State<AnimalScreen2> {
 
   @override
   void initState() {
-    _controller2 = VideoPlayerController.asset('assets/videos/animais/coelho.mp4');
-    _initializeVideoPlayerFuture = _controller2.initialize();
+    _controller6 = VideoPlayerController.asset('assets/videos/transportes/metro.mp4');
+    _initializeVideoPlayerFuture = _controller6.initialize();
 
-    _controller2.setLooping(true);
+    _controller6.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller2.dispose();
+    _controller6.dispose();
 
     super.dispose();
   }
@@ -65,35 +64,34 @@ class _Animal2FormState extends State<AnimalScreen2> {
             child: SingleChildScrollView(
               child: Column(
                 children: <Widget>[
-              Padding(
-              padding:
-              const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-              child:Text(
-                "Nível 1",
-                style: TextStyle(
-                  fontSize: getProportionateScreenWidth(20),
-                  color: Colors.indigo[900],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              ),
                   Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
-                    child:FutureBuilder(
+                    child:Text(
+                      "Nível 1",
+                      style: TextStyle(
+                        fontSize: getProportionateScreenWidth(20),
+                        color: Colors.indigo[900],
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                    const EdgeInsets.only(bottom: 15, left: 10, right: 10),
+                    child: FutureBuilder(
                       future: _initializeVideoPlayerFuture,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller2.value.aspectRatio,
-                            child: VideoPlayer(_controller2),
+                            aspectRatio: _controller6.value.aspectRatio,
+                            child: VideoPlayer(_controller6),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
                         }
                       },
                     ),
-
                   ),
                   SizedBox(
                     width: getProportionateScreenWidth(100),
@@ -102,27 +100,29 @@ class _Animal2FormState extends State<AnimalScreen2> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller2.value.isPlaying) {
-                            _controller2.pause();
+                          if (_controller6.value.isPlaying) {
+                            _controller6.pause();
                           } else {
                             // play
-                            _controller2.play();
+                            _controller6.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller2.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                        _controller6.value.isPlaying
+                            ? Icons.pause
+                            : Icons.play_arrow,
                       ),
                     ),
-
                   ),
+
                   SizedBox(height: getProportionateScreenHeight(80)),
                   Padding(
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child: TextFormField(
-                      //key: const Key('email'),
+                      // key: const Key('email'),
                       controller: _wordCorrectController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
@@ -135,23 +135,22 @@ class _Animal2FormState extends State<AnimalScreen2> {
                   ),
                   SizedBox(height: getProportionateScreenHeight(120)),
                   SizedBox(
-                    width: getProportionateScreenWidth(100),
+                    width: getProportionateScreenWidth(200),
                     height: getProportionateScreenHeight(56),
                     child: ElevatedButton(
                       // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
-                          if(_wordCorrectController.text == apiMockUp.l1.answers[1].resposta)
+                          if (_wordCorrectController.text ==
+                              apiMockUp.l1.answers[4].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Animal3(/*apiMockUpAccounts*/),
+                                  builder: (context) =>
+                                      Animal2(/*apiMockUpAccounts*/),
                                 ));
-                         /* else if (_wordCorrectController.text.isEmpty){
-                            addError(error: "Please enter your email");
-                          }*/
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[1].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[4].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,
@@ -202,6 +201,7 @@ class _Animal2FormState extends State<AnimalScreen2> {
                             ),
                           );
                         }
+
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -226,6 +226,7 @@ class _Animal2FormState extends State<AnimalScreen2> {
       ),
     );
   }
+
   void removeError({String? error}) {
     if (errors.contains(error)) {
       setState(() {
@@ -242,5 +243,3 @@ class _Animal2FormState extends State<AnimalScreen2> {
     }
   }
 }
-
-

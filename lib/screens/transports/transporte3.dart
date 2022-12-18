@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appsilva/screens/mainPageScreen.dart';
-import 'package:appsilva/screens/transports/transporteScreen2.dart';
+import 'package:appsilva/screens/transports/transporteScreen3.dart';
 
-class Transporte2 extends StatelessWidget {
-  static String routeName = "/transports2_page";
+class Transporte3 extends StatelessWidget {
+  static String routeName = "/transports3_page";
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class Transporte2 extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.indigo[900],
       ),
-      body: TransporteScreen2(),
+      body: TransporteScreen3(),
     );
 
 
