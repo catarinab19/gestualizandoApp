@@ -149,34 +149,8 @@ class _Objecto1FormState extends State<ObjectoScreen1> {
                                   builder: (context) =>
                                       Objeto2(),
                                 ));
-                          else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[6].resposta && _wordCorrectController.text.isNotEmpty){
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                behavior: SnackBarBehavior.floating,
-                                backgroundColor: Colors.transparent,
-                                elevation: 0,
-                                content:
-                                Container(
-                                  padding: const EdgeInsets.all(16),
-                                  height: 60,
-                                  decoration: BoxDecoration(
-                                    color: Colors.indigo[900],
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                  ),
-                                  child: const Text(
-                                    "Resposta errada! Tenta novamente :)",
-                                    style: const TextStyle(
-                                      fontSize: 17,
-
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
                         }
-                        if (_wordCorrectController.text.isEmpty){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "bola"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,

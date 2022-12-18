@@ -3,27 +3,27 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+//import 'package:appsilva/screens/objetos/objeto1.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
-import 'package:appsilva/screens/transports/transporte2.dart';
-import 'package:appsilva/screens/objetos/objeto4.dart';
+import 'package:appsilva/screens/estado/estado3.dart';
+import 'package:appsilva/screens/objetos/objeto2.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class ObjectoScreen3 extends StatefulWidget {
-  static String routeName = "/objeto3_page";
+class EstadoScreen2 extends StatefulWidget {
+  static String routeName = "/estado2_page";
 
   @override
-  _Objecto3FormState createState() => _Objecto3FormState();
+  _Estado2FormState createState() => _Estado2FormState();
 }
 
-class _Objecto3FormState extends State<ObjectoScreen3> {
-  late VideoPlayerController _controller10;
+class _Estado2FormState extends State<EstadoScreen2> {
+  late VideoPlayerController _controller24;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -37,17 +37,17 @@ class _Objecto3FormState extends State<ObjectoScreen3> {
 
   @override
   void initState() {
-    _controller10 = VideoPlayerController.asset('assets/videos/objetos/computador.mp4');
-    _initializeVideoPlayerFuture = _controller10.initialize();
+    _controller24 = VideoPlayerController.asset('assets/videos/estado/triste.mp4');
+    _initializeVideoPlayerFuture = _controller24.initialize();
 
-    _controller10.setLooping(true);
+    _controller24.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller10.dispose();
+    _controller24.dispose();
 
     super.dispose();
   }
@@ -68,7 +68,7 @@ class _Objecto3FormState extends State<ObjectoScreen3> {
                     padding:
                     const EdgeInsets.only(bottom: 15, left: 10, right: 10),
                     child:Text(
-                      "Nível 4",
+                      "Nível 2",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(20),
                         color: Colors.indigo[900],
@@ -84,8 +84,8 @@ class _Objecto3FormState extends State<ObjectoScreen3> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller10.value.aspectRatio,
-                            child: VideoPlayer(_controller10),
+                            aspectRatio: _controller24.value.aspectRatio,
+                            child: VideoPlayer(_controller24),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -100,17 +100,17 @@ class _Objecto3FormState extends State<ObjectoScreen3> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller10.value.isPlaying) {
-                            _controller10.pause();
+                          if (_controller24.value.isPlaying) {
+                            _controller24.pause();
                           } else {
                             // play
-                            _controller10.play();
+                            _controller24.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller10.value.isPlaying
+                        _controller24.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -135,22 +135,22 @@ class _Objecto3FormState extends State<ObjectoScreen3> {
                   ),
                   SizedBox(height: getProportionateScreenHeight(120)),
                   SizedBox(
-                    width: getProportionateScreenWidth(200),
+                    width: getProportionateScreenWidth(100),
                     height: getProportionateScreenHeight(56),
                     child: ElevatedButton(
                       // key: const Key('signin'),
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[8].resposta)
+                              apiMockUp.l1.answers[30].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Objeto4(),
+                                      Estado3(),
                                 ));
                         }
-                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "computador"){
+                        if (_wordCorrectController.text.isEmpty || _wordCorrectController.text != "triste"){
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               behavior: SnackBarBehavior.floating,

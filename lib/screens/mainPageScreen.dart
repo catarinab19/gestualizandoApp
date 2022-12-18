@@ -10,6 +10,7 @@ import 'package:appsilva/screens/transports/transporte1.dart';
 import 'package:appsilva/screens/objetos/objeto1.dart';
 import 'package:appsilva/screens/cores/cor1.dart';
 import 'package:appsilva/screens/divisoes/divisao1.dart';
+import 'package:appsilva/screens/estado/estado1.dart';
 
 class MainPageScreen extends StatefulWidget {
   static String routeName = "/main_page";
@@ -40,13 +41,13 @@ class _MainPageFormState extends State<MainPageScreen> {
                       "Categorias",
                       style: TextStyle(
                         fontSize: getProportionateScreenWidth(28),
-                        color: Colors.indigo[900],
+                        color: Colors.blueGrey[500],
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(200),
+                      width: getProportionateScreenWidth(300),
                       height: getProportionateScreenHeight(60),
                       child: ElevatedButton.icon(
                         //key: const Key('signin'),
@@ -62,10 +63,10 @@ class _MainPageFormState extends State<MainPageScreen> {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          primary: Colors.indigo[900],
+                          primary: Colors.red[300],
                         ),
                         label: Text(
-                          'Animais',
+                          'Nível 1 - Animais',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
@@ -78,7 +79,39 @@ class _MainPageFormState extends State<MainPageScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(200),
+                      width: getProportionateScreenWidth(300),
+                      height: getProportionateScreenHeight(60),
+                      child: ElevatedButton.icon(
+                        //key: const Key('signin'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Estado1(),
+                              ));
+                        },
+
+                        style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          primary: Colors.deepOrange[300],
+                        ),
+                        label: Text(
+                          'Nível 2 - Estados de espírito',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: getProportionateScreenWidth(18),
+                            color: Colors.white,
+                          ),
+                        ),
+                        icon: Icon(Icons.directions_car_filled_rounded
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: getProportionateScreenHeight(20)),
+                    SizedBox(
+                      width: getProportionateScreenWidth(300),
                       height: getProportionateScreenHeight(60),
                       child: ElevatedButton.icon(
                         //key: const Key('signin'),
@@ -94,10 +127,10 @@ class _MainPageFormState extends State<MainPageScreen> {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          primary: Colors.indigo[900],
+                          primary: Colors.lightGreen[400],
                         ),
                         label: Text(
-                          'Transportes',
+                          'Nível 3 - Transportes',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
@@ -110,7 +143,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(200),
+                      width: getProportionateScreenWidth(300),
                       height: getProportionateScreenHeight(60),
                       child: ElevatedButton.icon(
                         //key: const Key('signin'),
@@ -126,10 +159,10 @@ class _MainPageFormState extends State<MainPageScreen> {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          primary: Colors.indigo[900],
+                          primary: Colors.cyan[300],
                         ),
                         label: Text(
-                          'Objetos',
+                          'Nível 4 - Objetos',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
@@ -142,7 +175,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(200),
+                      width: getProportionateScreenWidth(300),
                       height: getProportionateScreenHeight(60),
                       child: ElevatedButton.icon(
                         //key: const Key('signin'),
@@ -158,10 +191,10 @@ class _MainPageFormState extends State<MainPageScreen> {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          primary: Colors.indigo[900],
+                          primary: Colors.blue[300],
                         ),
                         label: Text(
-                          'Cores',
+                          'Nível 5 - Cores',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
@@ -174,7 +207,7 @@ class _MainPageFormState extends State<MainPageScreen> {
                     ),
                     SizedBox(height: getProportionateScreenHeight(20)),
                     SizedBox(
-                      width: getProportionateScreenWidth(200),
+                      width: getProportionateScreenWidth(300),
                       height: getProportionateScreenHeight(60),
                       child: ElevatedButton.icon(
                         //key: const Key('signin'),
@@ -190,10 +223,10 @@ class _MainPageFormState extends State<MainPageScreen> {
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
-                          primary: Colors.indigo[900],
+                          primary: Colors.indigo[300],
                         ),
                         label: Text(
-                          'Divisoes',
+                          'Nível 6 - Divisões',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: getProportionateScreenWidth(18),
@@ -204,6 +237,8 @@ class _MainPageFormState extends State<MainPageScreen> {
                         ),
                       ),
                     ),
+                    SizedBox(height: getProportionateScreenHeight(20)),
+
                   ],
                 ),
               ),

@@ -72,6 +72,11 @@ class ApiMockUp {
   Answer answer28 = Answer("casa de banho", 27);
   Answer answer29 = Answer("quarto", 28);
 
+  Answer answer30 = Answer("feliz", 29);
+  Answer answer31 = Answer("triste", 30);
+  Answer answer32 = Answer("chateado", 31);
+  Answer answer33 = Answer("orgulhoso", 32);
+
   ListAnswer l1 = ListAnswer();
 
   void addAnswer(Answer answer) {
