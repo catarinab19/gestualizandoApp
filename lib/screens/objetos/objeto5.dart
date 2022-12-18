@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:appsilva/screens/mainPageScreen.dart';
-import 'package:appsilva/screens/objetos/objectoScreen1.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+import 'package:appsilva/screens/objetos/objectoScreen5.dart';
 
-class Objeto1 extends StatelessWidget {
-  static String routeName = "/objeto1_page";
+class Objeto5 extends StatelessWidget {
+  static String routeName = "/objeto5_page";
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +24,7 @@ class Objeto1 extends StatelessWidget {
         backgroundColor: Colors.white,
         foregroundColor: Colors.indigo[900],
       ),
-      body: ObjectoScreen1(),
+      body: ObjectoScreen5(),
     );
-
-
   }
 }

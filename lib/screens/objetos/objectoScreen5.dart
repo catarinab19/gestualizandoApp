@@ -3,27 +3,27 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:appsilva/widgets/sizeConfig.dart';
-import 'package:appsilva/screens/objetos/objeto1.dart';
+import 'package:appsilva/screens/objetos/objeto3.dart';
 import 'package:appsilva/screens/mainPage.dart';
 import 'package:appsilva/apiMockUp.dart';
 import 'package:appsilva/listAnswer.dart';
 import 'package:appsilva/screens/transports/transporte2.dart';
-import 'package:appsilva/screens/objetos/objeto2.dart';
+import 'package:appsilva/screens/objetos/objeto5.dart';
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-class ObjectoScreen1 extends StatefulWidget {
-  static String routeName = "/objeto1_page";
+class ObjectoScreen5 extends StatefulWidget {
+  static String routeName = "/objeto5_page";
 
   @override
-  _Objecto1FormState createState() => _Objecto1FormState();
+  _Objecto5FormState createState() => _Objecto5FormState();
 }
 
-class _Objecto1FormState extends State<ObjectoScreen1> {
-  late VideoPlayerController _controller8;
+class _Objecto5FormState extends State<ObjectoScreen5> {
+  late VideoPlayerController _controller12;
   late Future<void> _initializeVideoPlayerFuture;
 
   final _wordCorrectController = new TextEditingController();
@@ -37,17 +37,17 @@ class _Objecto1FormState extends State<ObjectoScreen1> {
 
   @override
   void initState() {
-    _controller8 = VideoPlayerController.asset('assets/videos/objetos/bola.mp4');
-    _initializeVideoPlayerFuture = _controller8.initialize();
+    _controller12 = VideoPlayerController.asset('assets/videos/objetos/caderno.mp4');
+    _initializeVideoPlayerFuture = _controller12.initialize();
 
-    _controller8.setLooping(true);
+    _controller12.setLooping(true);
 
     super.initState();
   }
 
   @override
   void dispose() {
-    _controller8.dispose();
+    _controller12.dispose();
 
     super.dispose();
   }
@@ -84,8 +84,8 @@ class _Objecto1FormState extends State<ObjectoScreen1> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio: _controller8.value.aspectRatio,
-                            child: VideoPlayer(_controller8),
+                            aspectRatio: _controller12.value.aspectRatio,
+                            child: VideoPlayer(_controller12),
                           );
                         } else {
                           return Center(child: CircularProgressIndicator());
@@ -100,17 +100,17 @@ class _Objecto1FormState extends State<ObjectoScreen1> {
                       onPressed: () {
                         setState(() {
                           // pause
-                          if (_controller8.value.isPlaying) {
-                            _controller8.pause();
+                          if (_controller12.value.isPlaying) {
+                            _controller12.pause();
                           } else {
                             // play
-                            _controller8.play();
+                            _controller12.play();
                           }
                         });
                       },
                       // icon
                       child: Icon(
-                        _controller8.value.isPlaying
+                        _controller12.value.isPlaying
                             ? Icons.pause
                             : Icons.play_arrow,
                       ),
@@ -142,15 +142,15 @@ class _Objecto1FormState extends State<ObjectoScreen1> {
                       onPressed: () {
                         for (var answer in listAnswer.answers) {
                           if (_wordCorrectController.text ==
-                              apiMockUp.l1.answers[6].resposta)
+                              apiMockUp.l1.answers[10].resposta)
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      Objeto2(),
+                                      Transporte2(),
                                 ));
                           else if (_wordCorrectController.text !=
-                              apiMockUp.l1.answers[6].resposta && _wordCorrectController.text.isNotEmpty){
+                              apiMockUp.l1.answers[10].resposta && _wordCorrectController.text.isNotEmpty){
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 behavior: SnackBarBehavior.floating,
